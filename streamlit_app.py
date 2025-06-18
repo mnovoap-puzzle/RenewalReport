@@ -42,4 +42,7 @@ st.subheader("🧾 Most Contracted Products")
 st.bar_chart(df_filtered["Product"].value_counts())
 
 # Upcoming Renewals
-st.subheader
+st.subheader("🔔 Upcoming Renewals")
+st.dataframe(df_filtered.sort_values("End Date Renewal Date").head(10)[
+    ["Client Name", "Product", "End Date Renewal Date", "Amount"]
+])
